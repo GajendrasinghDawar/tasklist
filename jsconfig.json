@@ -1,7 +1,24 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "components/*": [
+        "./src/_components/*"
+      ],
+      "utils/*": [
+        "./src/_utils/*"
+      ],
+      "hooks/*": [
+        "./src/_hooks/*"
+      ],
+      "ui/*": [
+        "./src/_ui/*"
+      ],
+      "db/*": [
+        "./src/_db/*"
+      ]
     }
   }
 }
