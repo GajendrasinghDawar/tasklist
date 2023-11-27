@@ -37,7 +37,7 @@ export function Tasklist({ data }) {
              "
         >
           <div className="flex-1 flex flex-col h-full ">
-            <h3>{item.tasktitle}</h3>
+            <h4>{item.tasktitle}</h4>
             <div className="flex-1">
               <p className="text-balance">{item.description}</p>
             </div>

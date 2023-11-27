@@ -7,6 +7,8 @@ import Modal from "../_ui/Modal"
 import { logoFont } from "@/app/font"
 
 import Form from "./Form"
+import { SignIn } from "./authComponents"
+import Link from "next/link"
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
@@ -19,12 +21,14 @@ export function Navbar() {
     <div className="h-[60px] md:w-9/12 w-full  top-0 mx-auto px-4">
       <div className="flex justify-between items-center h-full ">
         <div>
-          <p
+          <Link
+            href={"/"}
             className={`text-iris11  -mx-2  font-extrabold italic no-underline text-xl md:text-3xl drop-shadow ${logoFont.className} cursor-pointer select-none block h-full`}
           >
             Notey
-          </p>
+          </Link>
         </div>
+
         <div>
           <Modal onOpenChange={onOpenChange} open={open}>
             <Modal.Trigger asChild>
