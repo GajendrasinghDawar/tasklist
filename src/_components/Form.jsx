@@ -1,5 +1,5 @@
 import { Select, SelectItem } from "ui/Select"
-import { insertData } from "@/_db/insertData"
+import { insertData } from "db/insertData"
 
 export default function Form({ CloseButton, onOpenChange, open }) {
   async function onSubmit(formData) {

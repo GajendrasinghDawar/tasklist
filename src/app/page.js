@@ -22,7 +22,7 @@ export default async function Home() {
       <code>
         {JSON.stringify(session, null, 2)}
       </code>
-      <Profile user={session?.user} />
+      {/* <Profile user={session?.user} /> */}
       <div>
         <Link href="/api/auth/signout" >
           Sign out

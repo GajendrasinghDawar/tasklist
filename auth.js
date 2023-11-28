@@ -2,22 +2,25 @@
 
 import NextAuth from "next-auth"
 import GitHub from "next-auth/providers/github"
-// import Google from "next-auth/providers/google"
+import Google from "next-auth/providers/google"
+import { sendVerificationRequest } from "utils/sendVerificationRequest"
 
 import PostgresAdapter from "@auth/pg-adapter"
 import { pool } from "db/connect"
 
 export const authConfig = {
-    theme: {
-        logo: "https://next-auth.js.org/img/logo/logo-sm.png",
-    },
     pages: {
         // signIn: '/login',
     },
     adapter: PostgresAdapter(pool),
     providers: [
         GitHub,
-        // Google,
+        Google,
+        {
+            id: "resend",
+            type: "email",
+            sendVerificationRequest
+        }
     ],
     callbacks: {
         async session({ session, user, token }) {

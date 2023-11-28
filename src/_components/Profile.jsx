@@ -5,7 +5,7 @@ export function Profile({ user }) {
     <div>
       <h2>{user.name}</h2>
       <p>{user.email}</p>
-      <Image src={user.image} alt={user.name} width={100} height={100} />
+      {user.image && <Image src={user.image} width={200} height={200} />}
     </div>
   )
 }
