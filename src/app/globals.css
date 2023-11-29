@@ -49,11 +49,7 @@
 
 }
 
-@layer components {
-  .my-custom-style {
-    /* ... */
-  }
-}
+@layer components {}
 
 @layer utilities {
   .content-auto {

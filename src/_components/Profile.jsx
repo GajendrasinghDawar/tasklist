@@ -3,6 +3,7 @@
 import Image from "next/image"
 import Dropdown from "@/_ui/DropDown"
 import { EnvelopeClosedIcon, ExitIcon } from "@radix-ui/react-icons"
+import { signOut } from "next-auth/react"
 
 export function Profile({ user }) {
   return (
@@ -29,8 +30,11 @@ export function Profile({ user }) {
         </Dropdown.Label>
         <Dropdown.Separator className="h-[1px] bg-violet6 m-[5px]" />
         <Dropdown.MenuItem>
-          <button className="rounded-md  focus:ring-2 focus:ring-sand6 flex w-full justify-between items-center text-center  bg-sand3 hover:bg-sand4 my-2 h-11 gap-3 px-2 text-sand11 hover:text-sand12">
-            log out
+          <button
+            className="rounded-md  focus:ring-2 focus:ring-sand6 flex w-full justify-between items-center text-center  bg-sand3 hover:bg-sand4 my-2 h-11 gap-3 px-2 text-sand11 hover:text-sand12"
+            onClick={() => signOut({ callbackUrl: "/auth/sign-in" })}
+          >
+            sign out
             <ExitIcon />
           </button>
         </Dropdown.MenuItem>

@@ -1,5 +1,6 @@
 import { Select, SelectItem } from "ui/Select"
 import { insertData } from "db/insertData"
+import { Toast } from "@/_ui/Toast"
 
 export default function Form({ CloseButton, onOpenChange, open }) {
   async function onSubmit(formData) {
@@ -12,7 +13,10 @@ export default function Form({ CloseButton, onOpenChange, open }) {
   }
 
   return (
-    <form className="flex flex-col   w-full h-full py-2" action={onSubmit}>
+    <form
+      className="flex flex-col  text-sand11 w-full h-full py-2"
+      action={onSubmit}
+    >
       <fieldset className="mb-[15px] flex items-center gap-5">
         <label
           className="text-iris11 w-[90px] text-right text-[15px]"
@@ -21,7 +25,7 @@ export default function Form({ CloseButton, onOpenChange, open }) {
           Task
         </label>
         <input
-          className="text-iris11 inline-flex h-[35px] w-full flex-1 items-center justify-center rounded-[4px]  leading-none outline-none ring-1 ring-sand7 focus:ring-2"
+          className=" inline-flex h-[35px] w-full flex-1 items-center justify-center rounded-[4px]  leading-none outline-none ring-1 ring-sand7 focus:ring-2 px-1"
           id="task"
           name="task"
           defaultValue="task"
@@ -50,7 +54,7 @@ export default function Form({ CloseButton, onOpenChange, open }) {
         </label>
         <textarea
           name="description"
-          className="text-iris11 text-sm shadow-iris7 focus:shadow-iris8 inline-flex w-full flex-1 items-center justify-center rounded-[4px] resize-none outline-none ring-1 ring-sand7 focus:ring-2 h-28"
+          className=" text-sm shadow-iris7 focus:shadow-iris8 inline-flex w-full flex-1 items-center justify-center rounded-[4px] resize-none outline-none ring-1 ring-sand7 focus:ring-2 h-28 px-1 pt-1"
           id="description"
           defaultValue="your todo!"
           placeholder="your description!"
@@ -66,6 +70,9 @@ export default function Form({ CloseButton, onOpenChange, open }) {
           Save
         </button>
       </div>
+      <Toast title="Upgrade available" content="We've just released Radix 3.0!">
+        <button>Upgrade</button>
+      </Toast>
     </form>
   )
 }

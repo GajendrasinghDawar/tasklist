@@ -15,16 +15,13 @@ export default async function Home() {
     <div className="md:w-9/12 mx-auto w-full  h-full flex flex-col overflow-y-auto gap-1 px-1">
       <section className=" sticky top-0  h-10  ">
         <h1>Tasklist</h1>
-
       </section>
       <code>
         {JSON.stringify(session, null, 2)}
       </code>
 
       <div>
-        <Link href="/api/auth/signout" >
-          Sign out
-        </Link>
+
         <Link href="/tasklist" >
           Tasklist
         </Link>
