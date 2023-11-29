@@ -21,7 +21,7 @@ export default function Form({ CloseButton, onOpenChange, open }) {
           Task
         </label>
         <input
-          className="text-iris11 shadow-iris7 focus:shadow-iris8 inline-flex h-[35px] w-full flex-1 items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none focus:shadow-[0_0_0_2px]"
+          className="text-iris11 inline-flex h-[35px] w-full flex-1 items-center justify-center rounded-[4px]  leading-none outline-none ring-1 ring-sand7 focus:ring-2"
           id="task"
           name="task"
           defaultValue="task"
@@ -48,10 +48,9 @@ export default function Form({ CloseButton, onOpenChange, open }) {
         >
           description
         </label>
-        <input
+        <textarea
           name="description"
-          type="textarea"
-          className="text-iris11 shadow-iris7 focus:shadow-iris8 inline-flex h-[35px] w-full flex-1 items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none focus:shadow-[0_0_0_2px]"
+          className="text-iris11 text-sm shadow-iris7 focus:shadow-iris8 inline-flex w-full flex-1 items-center justify-center rounded-[4px] resize-none outline-none ring-1 ring-sand7 focus:ring-2 h-28"
           id="description"
           defaultValue="your todo!"
           placeholder="your description!"

@@ -1,22 +1,10 @@
-"use client"
-
-import { useState } from "react"
-import { PlusIcon } from "./Icons"
-import Modal from "../_ui/Modal"
-
-import { logoFont } from "@/app/font"
-
-import Form from "./Form"
-import { SignIn } from "./authComponents"
 import Link from "next/link"
+import { logoFont } from "@/app/font"
+import { Profile } from "@/_components/Profile"
+import { auth } from "auth"
 
-export function Navbar() {
-  const [open, setOpen] = useState(false)
-
-  function onOpenChange(open) {
-    setOpen(open)
-  }
-
+export async function Navbar() {
+  const session = await auth()
   return (
     <div className="h-[60px] md:w-9/12 w-full  top-0 mx-auto px-4">
       <div className="flex justify-between items-center h-full ">
@@ -28,25 +16,14 @@ export function Navbar() {
             Notey
           </Link>
         </div>
-
         <div>
-          <Modal onOpenChange={onOpenChange} open={open}>
-            <Modal.Trigger asChild>
-              <button className="h-6 w-6 border-sage5 bg-gray3 border rounded grid place-content-center">
-                <PlusIcon />
-              </button>
-            </Modal.Trigger>
-            <Modal.Content
-              title="Edit tasklist"
-              description="Edit your tasklist information."
-            >
-              <Form
-                CloseButton={Modal.Close}
-                onOpenChange={onOpenChange}
-                open={open}
-              />
-            </Modal.Content>
-          </Modal>
+          {session?.user ? (
+            <Profile user={session?.user} />
+          ) : (
+            <button className="border border-sand5 p-1 rounded-md hover:bg-sand4 bg-sand3">
+              sign up
+            </button>
+          )}
         </div>
       </div>
     </div>

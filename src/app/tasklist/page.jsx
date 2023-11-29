@@ -4,6 +4,7 @@ import { redirect } from "next/navigation"
 import { auth } from "auth"
 
 import { pool } from "db/connect"
+import { ModalWithForm } from "@/_components/ModelWithForm"
 
 export default async function TaskList() {
   const session = await auth()
@@ -16,8 +17,11 @@ export default async function TaskList() {
 
   return (
     <div className="md:w-9/12 mx-auto w-full  h-full flex flex-col overflow-y-auto gap-1 px-1">
-      <section className=" sticky top-0  h-10  ">
+      <section className=" sticky top-0  h-10  flex justify-between">
         <h1>Tasklist</h1>
+        <div>
+          <ModalWithForm />
+        </div>
       </section>
 
       <Tasklist data={result.rows || []} />

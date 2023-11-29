@@ -1,5 +1,3 @@
-
-import { Profile } from "@/_components/Profile"
 import { auth } from "auth"
 
 import Link from 'next/link'
@@ -10,7 +8,7 @@ export default async function Home() {
   const session = await auth()
 
   if (!session?.user) return (
-    redirect("/api/auth/signin?callbackUrl=/tasklist")
+    redirect("auth/sign-in")
   )
 
   return (
@@ -22,7 +20,7 @@ export default async function Home() {
       <code>
         {JSON.stringify(session, null, 2)}
       </code>
-      {/* <Profile user={session?.user} /> */}
+
       <div>
         <Link href="/api/auth/signout" >
           Sign out

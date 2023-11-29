@@ -1,7 +1,7 @@
 /** @return { import("next-auth").NextAuthConfig } */
 
 import NextAuth from "next-auth"
-import GitHub from "next-auth/providers/github"
+// import GitHub from "next-auth/providers/github"
 import Google from "next-auth/providers/google"
 import { sendVerificationRequest } from "utils/sendVerificationRequest"
 
@@ -10,11 +10,11 @@ import { pool } from "db/connect"
 
 export const authConfig = {
     pages: {
-        // signIn: '/login',
+        signIn: 'auth/sign-in',
+        verifyRequest: '/auth/verify-request',
     },
     adapter: PostgresAdapter(pool),
     providers: [
-        GitHub,
         Google,
         {
             id: "resend",
