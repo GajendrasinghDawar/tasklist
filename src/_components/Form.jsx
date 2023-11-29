@@ -1,6 +1,5 @@
 import { Select, SelectItem } from "ui/Select"
 import { insertData } from "db/insertData"
-import { Toast } from "@/_ui/Toast"
 
 export default function Form({ CloseButton, onOpenChange, open }) {
   async function onSubmit(formData) {
@@ -70,9 +69,6 @@ export default function Form({ CloseButton, onOpenChange, open }) {
           Save
         </button>
       </div>
-      <Toast title="Upgrade available" content="We've just released Radix 3.0!">
-        <button>Upgrade</button>
-      </Toast>
     </form>
   )
 }

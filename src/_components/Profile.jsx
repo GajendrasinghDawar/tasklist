@@ -10,15 +10,15 @@ export function Profile({ user }) {
     <Dropdown>
       <Dropdown.DropdownButton>
         <button
-          className="rounded-full h-12 w-12 inline-flex items-center justify-center overflow-hidden ring-2 ring-sand8
-          data-[state=open]:ring-2 focus:outline-dotted data-[state=open]:ring-sand8
+          className="rounded-full h-12 w-12 inline-flex items-center justify-center overflow-hidden ring-2 ring-iris5
+          data-[state=open]:ring-2 focus:outline-none data-[state=open]:ring-iris9
        select-none"
           aria-label="profile details"
         >
           {user.image ? (
             <Image src={user.image} width={200} height={200} />
           ) : (
-            <button className="h-12 w-12 bg-sand8 rounded-full" />
+            <span className="h-12 w-12 bg-sand8 rounded-full" />
           )}
         </button>
       </Dropdown.DropdownButton>

@@ -22,27 +22,36 @@ export function Tasklist({ data }) {
         overflow-y-auto  
         place-content-start
         place-items-start 
+        py-2
+        px-1
 `}
     >
       {data.map((item) => (
         <div
           key={item.id}
-          className="p-2 border
+          className=" 
               ring-1 
               ring-iris5  rounded-md 
              flex
              max-h-min
            transition duration-300 ease-in-out
              shadow-sm
+  
              "
         >
-          <div className="flex-1 flex flex-col h-full ">
-            <h4>{item.tasktitle}</h4>
-            <div className="flex-1">
-              <p className="text-balance">{item.description}</p>
+          <div className="flex-1 flex flex-col h-full min-w-[180px]  p-2">
+            <h4 className="first-letter:uppercase text-sand11">
+              {item.tasktitle}
+            </h4>
+            <div className="flex-1 my-2">
+              <p className="text-balance first-letter:uppercase text-sm">
+                {item.description}
+              </p>
             </div>
             <div className="flex justify-between">
-              <p className="font-bold text-sm">{item.status}</p>
+              <p className="font-bold text-sm first-letter:uppercase text-sand11">
+                {item.status.split("_").join(" ") || ""}
+              </p>
               <form action={deleteForm}>
                 <input type="hidden" name="id" value={item.id} />
                 <button className="h-6 w-6 border-red5 bg-red3 hover:bg-red4 border rounded grid place-content-center">

@@ -11,7 +11,7 @@ export async function sendVerificationRequest(params) {
                 to: identifier,
                 subject: `Sign in to ${host}`,
                 text: `Sign in to ${host} ${url}`,
-                html: `Sign in to ${host}\n${url}\n\n`
+                html: `Sign in to <a href="${url}">${host}</a>`
             });
         return { success: true, data };
     } catch (error) {

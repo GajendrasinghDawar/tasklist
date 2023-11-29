@@ -10,7 +10,7 @@ export default function SignIn() {
     async function handleSubmit(e) {
         e.preventDefault()
 
-        let result = await signIn("resend", { email: e.target.email.value, redirect: false })
+        let result = await signIn("resend", { email: e.target.email.value, redirect: false, callbackUrl: '/' })
         if (result.error) {
             return null
         } else {

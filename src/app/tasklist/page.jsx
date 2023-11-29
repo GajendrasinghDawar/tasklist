@@ -17,7 +17,7 @@ export default async function TaskList() {
 
   return (
     <div className="md:w-9/12 mx-auto w-full  h-full flex flex-col overflow-y-auto gap-1 px-1">
-      <section className=" sticky top-0  h-10  flex justify-between">
+      <section className=" sticky top-0  h-10  flex justify-between px-2 my-2">
         <h1>Tasklist</h1>
         <div>
           <ModalWithForm />
