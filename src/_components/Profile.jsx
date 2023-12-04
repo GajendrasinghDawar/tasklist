@@ -12,7 +12,7 @@ export function Profile({ user }) {
       <Dropdown.DropdownButton>
         <button
           className="rounded-full h-12 w-12 inline-flex items-center justify-center overflow-hidden ring-2 ring-iris5
-          data-[state=open]:ring-2 focus:outline-none data-[state=open]:ring-iris9
+          data-[state=open]:ring-2 focus:outline-none focus:ring-iris9 data-[state=open]:ring-iris9
        select-none"
           aria-label="profile details"
         >
@@ -42,6 +42,8 @@ export function Profile({ user }) {
           >
             Tasklist
           </Link>
+        </Dropdown.MenuItem>
+        <Dropdown.MenuItem>
           <button
             className="rounded-md  focus:ring-2 focus:ring-sand6 flex w-full justify-between items-center text-center  bg-sand3 hover:bg-sand4 my-2 h-11 gap-3 px-2 text-sand11 hover:text-sand12  font-medium"
             onClick={() => signOut({ callbackUrl: "/auth/sign-in" })}

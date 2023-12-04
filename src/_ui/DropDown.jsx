@@ -31,7 +31,7 @@ function DropdownMenu({ children }) {
 
 function MenuItem({ children }) {
   return (
-    <RadixDropdownMenu.Item className="hover:outline-none ">
+    <RadixDropdownMenu.Item asChild className="hover:outline-none ">
       {children}
     </RadixDropdownMenu.Item>
   )
