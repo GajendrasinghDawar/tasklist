@@ -1,16 +1,15 @@
-import { Tasklist } from "@/_components/Tasklist"
 import { redirect } from "next/navigation"
 
 import { auth } from "auth"
-
+import { Tasklist } from "components/Tasklist"
 import { pool } from "db/connect"
-import { ModalWithForm } from "@/_components/ModelWithForm"
+import { ModalWithForm } from "components/ModelWithForm"
 
 export default async function TaskList() {
   const session = await auth()
-
-  if (!session?.user) return redirect("/api/auth/signin?callbackUrl=/tasklist")
-
+  if (!session?.user) {
+    return redirect("/api/auth/signin?callbackUrl=/tasklist")
+  }
   let result = await pool.query(" select * from task where user_id = $1 ", [
     session.user.id,
   ])

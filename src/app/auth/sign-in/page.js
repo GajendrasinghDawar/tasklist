@@ -1,16 +1,19 @@
 "use client"
 
-import { signIn } from "next-auth/react"
 import { useState } from "react"
-import { Toast } from "@/_ui/Toast"
+import { signIn } from "next-auth/react"
+
+import { Toast } from "ui/Toast"
 
 export default function SignIn() {
     const [open, setOpen] = useState(false)
-
     async function handleSubmit(e) {
         e.preventDefault()
-
-        let result = await signIn("resend", { email: e.target.email.value, redirect: false, callbackUrl: '/' })
+        let result = await signIn("resend",
+            {
+                email: e.target.email.value,
+                redirect: false, callbackUrl: '/'
+            })
         if (result.error) {
             return null
         } else {
@@ -27,7 +30,6 @@ export default function SignIn() {
                         Sign In
                     </h1>
                 </div>
-
                 <form className="flex flex-col gap-2 text-iris12 mt-5" onSubmit={handleSubmit}>
                     <input
                         className="border bg-iris2 p-2 border-sand5 rounded-md text-center text-sand11 focus:outline-none focus:ring-2 focus:ring-iris7 focus:border-transparent"
@@ -41,7 +43,6 @@ export default function SignIn() {
                     >Sign in with Email</button>
                 </form>
                 <hr className="mt-5 bg-iris5 border-1" />
-
                 <div className="w-full">
                     <button
                         className=" w-full p-2 inline-flex gap-2 border rounded-md justify-center items-center my-4 bg-green3 text-green12 border-green5 focus:ring-2 focus:ring-green7 focus:border-transparent focus:outline-none"
@@ -51,7 +52,6 @@ export default function SignIn() {
                         Sign in with Google
                     </button>
                 </div>
-
             </div>
             <Toast open={open} onOpenChange={() => setOpen(!open)} >
                 <div className="flex gap-1">
@@ -69,7 +69,6 @@ export default function SignIn() {
                 </div>
             </Toast>
         </div>
-
     )
 }
 

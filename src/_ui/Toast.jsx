@@ -8,7 +8,7 @@ export function Toast({ open, onOpenChange, children, ...props }) {
         className="bg-iris4 shadow rounded-md  p-[15px] "
         open={open}
         onOpenChange={onOpenChange}
-        duration={4000}
+        duration={5000}
       >
         {children}
       </ToastPrimitive.Root>
