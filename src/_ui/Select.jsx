@@ -7,6 +7,7 @@ import {
   ChevronUpIcon,
 } from "@radix-ui/react-icons"
 
+// eslint-disable-next-line react/display-name
 export function Select({ name, defaultValue, children }) {
   return (
     <SelectPrimitive.Root name={name} defaultValue={defaultValue}>
@@ -30,24 +31,23 @@ export function Select({ name, defaultValue, children }) {
   )
 }
 
-export const SelectItem = React.forwardRef(
-  ({ children, className, ...props }, forwardedRef) => {
-    return (
-      <SelectPrimitive.Item
-        className={classnames(
-          "text-[13px] leading-none text-sand11 rounded-[3px] flex items-center h-[25px] pr-[35px] pl-[25px] relative select-none data-[disabled]:text-sand8 data-[disabled]:pointer-events-none data-[highlighted]:outline-none data-[highlighted]:bg-iris9 data-[highlighted]:text-iris1",
-          className
-        )}
-        {...props}
-        ref={forwardedRef}
-      >
-        <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
-        <SelectPrimitive.ItemIndicator className="absolute left-0 w-[25px] inline-flex items-center justify-center">
-          <CheckIcon />
-        </SelectPrimitive.ItemIndicator>
-      </SelectPrimitive.Item>
-    )
-  }
-)
-
-SelectItem.displayName = "SelectItem"
+export const SelectItem = React.forwardRef(function SelectItem(
+  { children, className, ...props },
+  forwardedRef
+) {
+  return (
+    <SelectPrimitive.Item
+      className={classnames(
+        "text-[13px] leading-none text-sand11 rounded-[3px] flex items-center h-[25px] pr-[35px] pl-[25px] relative select-none data-[disabled]:text-sand8 data-[disabled]:pointer-events-none data-[highlighted]:outline-none data-[highlighted]:bg-iris9 data-[highlighted]:text-iris1",
+        className
+      )}
+      {...props}
+      ref={forwardedRef}
+    >
+      <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
+      <SelectPrimitive.ItemIndicator className="absolute left-0 w-[25px] inline-flex items-center justify-center">
+        <CheckIcon />
+      </SelectPrimitive.ItemIndicator>
+    </SelectPrimitive.Item>
+  )
+})
