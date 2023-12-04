@@ -11,7 +11,7 @@ export function Welcome({ user }) {
       animate={{
         opacity: 1,
         transition: {
-          duration: 0.88,
+          duration: 1.25,
         },
       }}
       className="h-full w-full flex flex-col rounded"

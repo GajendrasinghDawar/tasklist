@@ -17,7 +17,12 @@ export function Profile({ user }) {
           aria-label="profile details"
         >
           {user.image ? (
-            <Image src={user.image} width={200} height={200} />
+            <Image
+              src={user.image}
+              width={200}
+              height={200}
+              alt={`profile picture of ${user.name}`}
+            />
           ) : (
             <span className="h-12 w-12 bg-sand8 rounded-full" />
           )}
